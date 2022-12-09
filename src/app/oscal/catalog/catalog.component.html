@@ -1,11 +1,11 @@
-<div class="card d-flex flex-column flex-fill">
+<div *ngIf="catalog | async as catalog" class="card d-flex flex-column flex-fill">
   <div class="card-body d-flex flex-column flex-fill">
     <h5 class="card-title text-center">
-      Catalog: {{ this.rootCatalog.catalog.metadata.title }}
+      Catalog: {{ this.catalog.metadata.title }}
     </h5>
     <div class="card-text text-center">
       <app-control-group-list
-        [groups]="this.rootCatalog.catalog.groups"
+        [groups]="this.catalog.groups"
       ></app-control-group-list>
     </div>
   </div>

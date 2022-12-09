@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { RootCatalog } from '../models/oscal-models';
-import { CatalogService } from '../services/catalog.service';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { State } from 'src/app/state/app.state';
+import { Catalog } from '../models/oscal-models';
+import { getCurrentCatalog } from '../state';
+import { catalogPageOpened } from '../state/actions/oscal-page.actions';
 
 @Component({
   selector: 'app-catalog',
@@ -8,13 +12,13 @@ import { CatalogService } from '../services/catalog.service';
   styleUrls: ['./catalog.component.scss']
 })
 export class CatalogComponent implements OnInit {
-  rootCatalog!: RootCatalog;
+  catalog!: Observable<Catalog>;
 
-  constructor(private catalogService: CatalogService) { }
+  constructor(private store: Store<State>) { }
 
   ngOnInit(): void {
-    this.catalogService.getCatalog().subscribe(catalog => {
-      this.rootCatalog = catalog;
-    })
+    this.store.dispatch(catalogPageOpened());
+    this.catalog = this.store.select(getCurrentCatalog)
   }
+
 }
