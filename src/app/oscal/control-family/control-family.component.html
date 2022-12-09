@@ -1,0 +1,12 @@
+<div *ngIf="controlFamily | async as controlFamily" class="catalog">
+  <div class="d-flex flex-row flex-wrap">
+    <div>
+      <h5 class="d-flex flex-row justify-content-start p-2">
+        {{ controlFamily.id.toLocaleUpperCase() }} - {{ controlFamily.title }}
+      </h5>
+    </div>
+  </div>
+  <div class="d-flex flex-column">
+    <app-control-list [controls]="controlFamily.controls"></app-control-list>  
+  </div>
+</div>

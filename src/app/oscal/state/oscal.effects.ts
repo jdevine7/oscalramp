@@ -15,9 +15,10 @@ export class OscalEffects {
     private catalogService: CatalogService
   ) {}
 
+  //two in actions in of type becaue i cant figure out router params + pages refresh/direct route to 
   loadCatalog = createEffect(() => {
     return this.actions.pipe(
-      ofType(OscalPageActions.catalogPageOpened),
+      ofType(OscalPageActions.catalogPageOpened, OscalPageActions.controlFamilyPageOpened),
       concatLatestFrom(() =>
         this.store
           .select(routeCatalogId)
@@ -37,4 +38,30 @@ export class OscalEffects {
       )
     );
   });
+
+  //this is the same thing as above except the ofType arg
+  //cant figure out how to use router store params on refresh correctly
+  // loadControlFamily = createEffect(() => {
+  //   return this.actions.pipe(
+  //     ofType(OscalPageActions.controlFamilyPageOpened),
+  //     concatLatestFrom(() =>
+  //       this.store
+  //         .select(routeCatalogId)
+  //         .pipe(filter((catalogId): catalogId is string => catalogId != null))
+  //     ),
+  //     switchMap(([, catalogId]) =>
+  //       this.catalogService.getCatalog(catalogId).pipe(
+  //         map((rootCatalog) =>
+  //           OscalApiActions.fetchCatalogSuccess({
+  //             currentCatalog: rootCatalog.catalog,
+  //           })
+  //         ),
+  //         catchError((error) =>
+  //           of(OscalApiActions.fetchCatalogFailure({ error }))
+  //         )
+  //       )
+  //     )
+  //   );
+  // });
+
 }

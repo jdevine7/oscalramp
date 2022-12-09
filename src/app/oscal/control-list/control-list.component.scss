@@ -1,0 +1,20 @@
+$orange: #ffb259;
+$gray: #505050;
+
+.controlFamily{
+	border: 1px solid #d7d8da;
+}
+
+.controlList{
+	color: $gray;
+}
+
+.groupId{
+	border-right: 1px solid $orange;
+	border-bottom: 1px solid $orange;
+}
+
+.controlsNav{
+	border-left: 1px solid $orange;
+	border-top: 1px solid $orange;
+}
