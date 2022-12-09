@@ -10,8 +10,6 @@ import { CatalogService } from '../services/catalog.service';
 export class CatalogComponent implements OnInit {
   rootCatalog!: RootCatalog;
 
-  title: string = ''
-
   constructor(private catalogService: CatalogService) { }
 
   ngOnInit(): void {
