@@ -9,7 +9,7 @@ export interface State extends AppState.State {
 
 const getOscalState = createFeatureSelector<OscalState>(OSCAL_FEATURE_KEY);
 
-export const catalogId = selectRouterParam('catalogId')
+export const routeCatalogId = selectRouterParam('catalogId');
 
 export const getCurrentCatalog = createSelector(
     getOscalState,

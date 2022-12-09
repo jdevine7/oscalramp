@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     NgbModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   exports: [
     NavbarComponent

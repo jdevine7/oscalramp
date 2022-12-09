@@ -7,6 +7,7 @@ import { StoreModule } from '@ngrx/store';
 import { oscalReducer, OSCAL_FEATURE_KEY } from './state/oscal.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { OscalEffects } from './state/oscal.effects';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const oscalRoutes: Routes = [
   {
@@ -29,7 +30,8 @@ const oscalRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(oscalRoutes),
     StoreModule.forFeature(OSCAL_FEATURE_KEY, oscalReducer),
-    EffectsModule.forFeature([OscalEffects])
+    EffectsModule.forFeature([OscalEffects]),
+    FontAwesomeModule
   ]
 })
 export class OscalModule { }
