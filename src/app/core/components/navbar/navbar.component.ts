@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent  {
+  faBars = faBars;
 	isMenuCollapsed = true
 }
