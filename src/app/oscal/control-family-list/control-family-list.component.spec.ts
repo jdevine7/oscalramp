@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ControlGroupListComponent } from './control-group-list.component';
+import { ControlFamilyListComponent } from './control-family-list.component';
 
 describe('ControlGroupListComponent', () => {
-  let component: ControlGroupListComponent;
-  let fixture: ComponentFixture<ControlGroupListComponent>;
+  let component: ControlFamilyListComponent;
+  let fixture: ComponentFixture<ControlFamilyListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ControlGroupListComponent ]
+      declarations: [ ControlFamilyListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ControlGroupListComponent);
+    fixture = TestBed.createComponent(ControlFamilyListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

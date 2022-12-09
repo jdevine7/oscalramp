@@ -1,18 +1,18 @@
 import { createReducer, on } from "@ngrx/store";
-import { Catalog } from "../models/oscal-models";
-import { OscalApiActions, OscalPageActions } from "./actions";
+import { Catalog, Group } from "../models/oscal-models";
+import { OscalApiActions } from "./actions";
 
 export const OSCAL_FEATURE_KEY = 'oscal';
 
 export interface OscalState {
     error: string,
-    currentCatalog: Catalog
+    currentCatalog: Catalog,
 }
 
 //barf
 const initState: OscalState = {
     error: '',
-    currentCatalog: { 
+    currentCatalog: {
         uuid: '',
         metadata: {
             title: '',
@@ -34,17 +34,11 @@ const initState: OscalState = {
 
 export const oscalReducer = createReducer<OscalState>(
     initState,
-    on(OscalPageActions.catalogPageOpened, (state): OscalState => {
-        return {
-            ...state,
-            error: ''
-        }
-    }),
     on(OscalApiActions.fetchCatalogSuccess, (state, action): OscalState => {
         return {
             ...state,
             currentCatalog: action.currentCatalog,
             error: ''
         }
-    }),
+    })
 )

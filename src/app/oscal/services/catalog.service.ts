@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { ComponentFactoryResolver, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RootCatalog } from '../models/oscal-models';
 

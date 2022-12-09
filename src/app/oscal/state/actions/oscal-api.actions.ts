@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { Catalog } from "../../models/oscal-models";
+import { Catalog, Group } from "../../models/oscal-models";
 
 export const fetchCatalogSuccess = createAction(
     '[Oscal API] Fetch catalog success',
