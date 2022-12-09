@@ -20,5 +20,4 @@ export class CatalogComponent implements OnInit {
     this.store.dispatch(catalogPageOpened());
     this.catalog = this.store.select(getCurrentCatalog)
   }
-
 }
