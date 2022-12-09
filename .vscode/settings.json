@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/35180e3f-643a-4743-b838-ad5d086bbdcd/AppServices/subscriptions/35180e3f-643a-4743-b838-ad5d086bbdcd/resourceGroups/innovationsprint/providers/Microsoft.Web/sites/oscalramp",
+    "appService.deploySubpath": "dist\\oscal-ramp"
+}
