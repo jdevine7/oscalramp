@@ -1,0 +1,6 @@
+{
+	"appId": "com.oscalramp.app",
+	"appName": "oscalRamp",
+	"webDir": "dist/oscal-ramp",
+	"bundledWebRuntime": false
+}
