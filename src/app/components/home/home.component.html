@@ -1,17 +1,35 @@
 <div class="home d-flex flex-column justify-content-around flex-wrap p-2">
   <h5 class="d-flex flex-column flex-wrap text-center p-2">Catalogs</h5>
-  <div class="d-flex flex-column flex-fill text-center">
-    <a
-      routerLink="/oscal/catalog/fdac0321-959f-43ec-a91d-322da7d9761c"
-      class="btn btn-primary"
-      >NIST SP 800-53 Rev 5</a
-    >
+  
+  <!-- data on this page is static, i did not have a way to fetch 'catalog headers' from assets folder where json files live -->
+  <div class="controlFamily d-flex flex-column flex-fill p-3 mx-2 my-2"  routerLink="/oscal/catalog/fdac0321-959f-43ec-a91d-322da7d9761c">
+    <!-- <div class=" d-flex flex-row ">
+      <h2 class="groupId pe-2 pb-2">
+        800-53
+      </h2>
+    </div> -->
+    <h6 class="d-flex flex-column justify-content-center text-center py-3">
+      Electronic Version of NIST SP 800-53 Rev 5 Controls and SP 800-53A Rev 5 Assessment Procedures
+    </h6>
+    <div class="controlsNav d-flex flex-row pb-1 align-self-end justify-content-center ps-2 pt-2">
+      <h6>20 control families</h6>
+      <fa-icon [icon]="faChevronRight" class="px-2"></fa-icon>
+    </div>
   </div>
-  <div class="d-flex flex-column flex-fill my-2 text-center">
-    <a
-      routerLink="/oscal/catalog/b954d3b7-d2c7-453b-8eb2-459e8d3b8462"
-      class="btn btn-primary"
-      >NIST SP 800-53 Rev 4</a
-    >
+
+  <!-- data on this page is static, i did not have a way to fetch 'catalog headers' from assets folder where json files live -->
+  <div class="controlFamily d-flex flex-column flex-fill p-3 mx-2 my-2"  routerLink="/oscal/catalog/b954d3b7-d2c7-453b-8eb2-459e8d3b8462">
+    <!-- <div class=" d-flex flex-row ">
+      <h2 class="groupId pe-2 pb-2">
+        800-53
+      </h2>
+    </div> -->
+    <h6 class="d-flex flex-column justify-content-center text-center py-3">
+      NIST Special Publication 800-53 Revision 4: Security and Privacy Controls for Federal Information Systems and Organizations
+    </h6>
+    <div class="controlsNav d-flex flex-row pb-1 align-self-end justify-content-center ps-2 pt-2">
+      <h6>18 control families</h6>
+      <fa-icon [icon]="faChevronRight" class="px-2"></fa-icon>
+    </div>
   </div>
 </div>

@@ -7,3 +7,7 @@ export const catalogPageOpened = createAction(
 export const controlFamilyPageOpened = createAction(
     '[Oscal Page] Control family page opened'
 );
+
+export const controlPageOpened = createAction(
+    '[Oscal Page] Control page opened'
+);

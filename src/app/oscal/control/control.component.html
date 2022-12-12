@@ -1,0 +1,52 @@
+<div *ngIf="control | async as control">
+  <div class="d-flex flex-row flex-wrap">
+    <div>
+      <h4 class="d-flex flex-row justify-content-start">
+        {{ control.id.toLocaleUpperCase() }} - {{ control.title }}
+      </h4>
+    </div>
+  </div>
+
+  <div class="d-flex flex-column flex-wrap">
+    <h5>Statement</h5>
+    <div *ngFor="let part1 of control.parts">
+      <div *ngFor="let part2 of part1.parts">
+        <div *ngIf="part2.props">
+          <h6>{{ part2.props[0].value }} {{ part2.prose }}</h6>
+          <div *ngFor="let part3 of part2.parts">
+            <div *ngIf="part3.props">
+              <h6 class="ms-2">{{ part3.props[0].value }} {{ part3.prose }}</h6>
+              <div *ngFor="let part4 of part3.parts">
+                <div *ngIf="part4.props">
+                  <h6 class="ms-4">
+                    {{ part4.props[0].value }} {{ part4.prose }}
+                  </h6>
+                  <!-- <div *ngFor="let part6 of part5.parts"></div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex flex-column my-2">
+    <h5>Params - Label</h5>
+    <div *ngFor="let param of control.params">
+      <div class="d-flex flex-row">
+        <h6>{{ param.id }} - {{ param.label }}</h6>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-column mb-2">
+    <h5>Guidance</h5>
+    <div *ngFor="let part of control.parts">
+      <div *ngIf="part.prose">
+        <div class="d-flex flex-row">
+          <h6>{{ part.prose }}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

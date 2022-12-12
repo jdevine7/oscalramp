@@ -15,10 +15,14 @@ export class OscalEffects {
     private catalogService: CatalogService
   ) {}
 
-  //two in actions in of type becaue i cant figure out router params + pages refresh/direct route to 
+  //two in actions in of type becaue i cant figure out router params + pages refresh/direct route to
   loadCatalog = createEffect(() => {
     return this.actions.pipe(
-      ofType(OscalPageActions.catalogPageOpened, OscalPageActions.controlFamilyPageOpened),
+      ofType(
+        OscalPageActions.catalogPageOpened,
+        OscalPageActions.controlFamilyPageOpened,
+        OscalPageActions.controlPageOpened
+      ),
       concatLatestFrom(() =>
         this.store
           .select(routeCatalogId)
@@ -63,5 +67,4 @@ export class OscalEffects {
   //     )
   //   );
   // });
-
 }
