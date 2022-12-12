@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "oscalRamp"
+  "defaultProject": "oscalRamp",
+  "cli": {
+    "analytics": false
+  }
 }
