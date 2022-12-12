@@ -5,7 +5,7 @@
 
 <div class="controlList d-flex px-2 flex-row justify-content-around flex-wrap">
   <div *ngFor="let control of controls" class="flex-fill">
-    <div class="controlFamily d-flex flex-column flex-fill p-3 mx-2 my-2"  routerLink="./family/{{control.id}}">
+    <div class="controlFamily d-flex flex-column flex-fill p-3 mx-2 my-2"  routerLink="./control/{{control.id}}">
       <div class=" d-flex flex-row ">
         <h1 class="groupId pe-2 pb-2">
           {{ control.id.toLocaleUpperCase() }}

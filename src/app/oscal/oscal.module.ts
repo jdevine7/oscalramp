@@ -10,41 +10,52 @@ import { OscalEffects } from './state/oscal.effects';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ControlFamilyComponent } from './control-family/control-family.component';
 import { ControlListComponent } from './control-list/control-list.component';
+import { ControlComponent } from './control/control.component';
 
 const oscalRoutes: Routes = [
   {
     path: 'catalog',
     children: [
       {
-        path: ":catalogId",
-        component: CatalogComponent
+        path: ':catalogId',
+        component: CatalogComponent,
       },
       {
-        path: ":catalogId/family",
+        path: ':catalogId/family',
         children: [
           {
-            path: ":familyId",
-            component: ControlFamilyComponent
-          }
-        ]
-      }
-    ]
-  }
-]
+            path: ':familyId',
+            component: ControlFamilyComponent,
+          },
+          {
+            path: ':familyId/control',
+            children: [
+              {
+                path: ':controlId',
+                component: ControlComponent
+              }
+            ]
+          },
+        ],
+      },
+    ],
+  },
+];
 
 @NgModule({
   declarations: [
     CatalogComponent,
     ControlFamilyListComponent,
     ControlFamilyComponent,
-    ControlListComponent
+    ControlListComponent,
+    ControlComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(oscalRoutes),
     StoreModule.forFeature(OSCAL_FEATURE_KEY, oscalReducer),
     EffectsModule.forFeature([OscalEffects]),
-    FontAwesomeModule
-  ]
+    FontAwesomeModule,
+  ],
 })
-export class OscalModule { }
+export class OscalModule {}

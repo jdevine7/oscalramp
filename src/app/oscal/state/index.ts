@@ -11,6 +11,7 @@ const getOscalState = createFeatureSelector<OscalState>(OSCAL_FEATURE_KEY);
 
 export const routeCatalogId = selectRouterParam('catalogId');
 export const familyId = selectRouterParam('familyId');
+export const controlId = selectRouterParam('controlId');
 
 export const getCurrentCatalog = createSelector(
   getOscalState,
@@ -22,5 +23,15 @@ export const getCurrentControlFamily = createSelector(
   familyId,
   (state, familyId) => {
     return state.currentCatalog.groups.find((g) => g.id === familyId);
+  }
+);
+
+export const getCurrentControl = createSelector(
+  getOscalState,
+  familyId,
+  controlId,
+  (state, familyId, controlId) => {
+    const controlFamily = state.currentCatalog.groups.find((g) => g.id === familyId);
+    return controlFamily?.controls.find((c) => c.id === controlId);
   }
 );
